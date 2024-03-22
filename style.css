@@ -1,0 +1,181 @@
+@font-face {
+    font-family: 'Kumbh sans';
+    src: url(images/KumbhSans-VariableFont_wght.ttf) format("truetype");
+}
+:root {
+    /* Text */
+    --Very-dark-desaturated-blue: hsl(238, 29%, 16%);
+    --Soft-red: hsl(14, 88%, 65%);
+    
+    /* /* Gradient : Background gradient: */
+    --Soft-violet: hsl(273, 75%, 66%);
+    --Soft-blue: hsl(240, 73%, 65%);
+
+    /* Neutral: Text */
+    --Very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --Dark-grayish-blue: hsl(240, 6%, 50%);
+
+    /* Dividers */
+    --Light-grayish-blue: hsl(240, 5%, 91%);
+
+    /* font size */
+    --fs-120: 12px;
+
+    /* font weight */
+    --fw-400: 400;
+    --fw-700: 700;
+
+    /* font family */
+    --ff-kumbh-sans: 'Kumbh sans';
+}
+.fs-120 {
+    font-size: var(--fs-120);
+}
+.fw-400 {
+    font-weight: var(--fw-400);
+}
+.fw-700 {
+    font-weight: var(--fw-700);
+}
+.ff-kumbh-sans {
+    font-family: var(--ff-kumbh-sans);
+}
+.text-color {
+    color: var(--Dark-grayish-blue);
+}
+.text-light-dark {
+    color: var(--Very-dark-grayish-blue);
+}
+.text-dark {
+    color: var(--Very-dark-desaturated-blue);
+}
+.bg-body {
+    background: linear-gradient(0deg, hsl(240, 73%, 65%), hsl(273, 75%, 66%));
+}
+.bg-container {
+    background: #fff;
+}
+.flex {
+    display: flex;
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+*,
+*::before, 
+*::after {
+    box-sizing: border-box;
+}
+body, h1, h2, h3, h4, h5, p {
+    margin: 0;
+}
+h1, h2, h3, h4, h5, p {
+    font-weight: 400;
+}
+body {
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+}
+.container {
+    flex-direction: column;    
+    width: 90%;
+    max-width: 375px;
+    border-radius: 20px;
+    padding: 0 1.5rem 2rem 1.5rem;
+    margin: 9rem auto;
+    text-align: center;
+    align-items: center;
+}
+.container > .image {
+    width: 80%;
+    margin-top: -7.3rem;
+    margin-bottom: 3rem;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.desktop,
+.shadow-desktop,
+.box {
+    display: none;
+}
+.shadow {
+    margin-top: -4.6rem;
+}
+.accordion {
+    text-align: left;
+    border-bottom: 1px solid var(--Light-grayish-blue);
+    padding: .7rem 0 .5rem 0;
+}
+.accordion-header::after {
+    content: "\25be";
+    font-size: 2rem;
+    color: orangered;
+}
+.accordion-header.active::after {
+    transform: rotate(-180deg);
+    font-weight: var(--fw-700);
+}
+.accordion-header {
+    align-items: center;
+    justify-content: space-between;
+    transition: transform .2s ease-in-out;
+}
+.accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .2s ease-in-out;
+}
+
+@media (min-width: 45rem) {
+    .container {
+        flex-direction: row;
+        width: 90%;
+        max-width: 1000px;
+        overflow: hidden;
+        margin: 0;
+    }    
+    .desktop,
+    .shadow-desktop,
+    .box {
+        display: block;
+        width: 100%;
+        position: absolute;
+    }
+    .image {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    .shadow-desktop {
+        margin-left: -25rem;
+        overflow: hidden;
+    }
+    .desktop {
+        width: 100%;
+        margin-top: 7rem;
+        right: 10%;
+    }
+    .box {
+        right: 76%;
+        top: 30%;
+        width: 40%;
+        z-index: 1;
+    }
+    .mobile,
+    .shadow {
+        display: none;
+    }
+    .preview {
+        padding: 3rem 1rem 1rem 1rem;
+        text-align: left;
+    }
+}
+@media (min-width: 50rem) {
+    .desktop {
+        margin-top: 10rem;
+    }
+}
